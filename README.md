@@ -19,6 +19,14 @@ The UNet architecture, consists of a contraction path(which is also called an En
 
 The UNet works by downsampling the input image, working in the lower resolution, and then upsampling the image (through the use of Transposed Convolutions for precise localization) to generate the segmented image of proportional size. For better precise locations, the decoder consists of skip connections which basically concatenate the output of the upsampling layer with the feature maps from the encoder at the corresponding level. Finally, a 1x1 convolution is used to reduce the filter dimension and obtain the segmented image.
 
+## Dataset
+
+The dataset for training consists of 590 histology images and its corresponding ground truth label (binary mask).
+
+![Training_Image](https://github.com/VikramShenoy97/Histology-Image-Segmentation-using-UNet/blob/master/data/raw/agxfpoobdlvfpkipcsun.jpg) ![Ground_Truth_Label](https://github.com/VikramShenoy97/Histology-Image-Segmentation-using-UNet/blob/master/data/gt/agxfpoobdlvfpkipcsun.jpg)
+
+
+The dataset for testing consists of 80 histology images similar to the ones provided as training images.
 
 ## Getting Started
 
@@ -29,16 +37,22 @@ These instructions will get you a copy of the project up and running on your loc
 This project is developed using Python 2.7 and uses the following frameworks / tools:
 
 • Keras
-• Google Colab*
+
+
+• Google Colab**
+
+
 • Pandas
+
+
 • Plotly**
 
-* Google Colab has been used for training the network since training the network on a GPU
+
+** Google Colab has been used for training the network since training the network on a GPU
 is temporally efficient.
 
 ** Plotly has only been used in the Graph.py file for visualising the training loss and training accuracy. It isn’t mandatory and does not contribute towards the training and prediction of the network.
 
-### Images
 
 #### Content Image - A picture taken by me while on my trip to Amsterdam.
 
