@@ -25,6 +25,9 @@ The dataset for training consists of 590 histology images and its corresponding 
 
 ![Training_Image](https://github.com/VikramShenoy97/Histology-Image-Segmentation-using-UNet/blob/master/data/raw/agxfpoobdlvfpkipcsun.jpg) ![Ground_Truth_Label](https://github.com/VikramShenoy97/Histology-Image-Segmentation-using-UNet/blob/master/data/gt/agxfpoobdlvfpkipcsun.jpg)
 
+Training Image           |  Ground Truth Label
+:-------------------------:|:-------------------------:
+![](https://github.com/VikramShenoy97/Histology-Image-Segmentation-using-UNet/blob/master/data/raw/agxfpoobdlvfpkipcsun.jpg)  |  ![](https://github.com/VikramShenoy97/Histology-Image-Segmentation-using-UNet/blob/master/data/gt/agxfpoobdlvfpkipcsun.jpg)
 
 The dataset for testing consists of 80 histology images similar to the ones provided as training images.
 
