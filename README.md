@@ -132,6 +132,8 @@ Fig 6. Test Image          |  Fig 7. Ground Truth Label
 
 
 The model also generalizes across a variety of lighting conditions.
+
+
 Fig 8. Test Image         |  Fig 9. Ground Truth Label 2
 :-------------------------:|:-------------------------:
 ![](https://github.com/VikramShenoy97/Histology-Image-Segmentation-using-UNet/blob/master/test_raw/xkrthiidzdormknuowqh.jpg)  |  ![](https://github.com/VikramShenoy97/Histology-Image-Segmentation-using-UNet/blob/master/test_gt/xkrthiidzdormknuowqh.jpg)
