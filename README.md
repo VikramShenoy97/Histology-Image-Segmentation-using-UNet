@@ -11,10 +11,10 @@ Develop a machine learning model for identifying cell nuclei from histology imag
 As the problem requires generating binary masks of raw histology images, my first thought was the use of a segmentation technique. There are multiple architectures for segmentation, however, UNet architecture works best for small datasets and is highly computationally efficient.
 
 
-![Unet](https://github.com/VikramShenoy97/Histology-Image-Segmentation-using-UNet/blob/master/unet_architecture.png)
+![Unet](https://github.com/VikramShenoy97/Histology-Image-Segmentation-using-UNet/blob/master/unet_architecture.png "UNet Architecture")
 
 
-The UNet architecture, consists of a contraction path(which is also called an Encoder) and an expanding path (which is also called a Decoder). This network is an end-to-end fully convolutional network, hence, the input to the network can be an image of any size.
+The UNet architecture, consists of a contraction path (which is also called an Encoder) and an expanding path (which is also called a Decoder). This network is an end-to-end fully convolutional network, hence, the input to the network can be an image of any size.
 
 
 The UNet works by downsampling the input image, working in the lower resolution, and then upsampling the image (through the use of Transposed Convolutions for precise localization) to generate the segmented image of proportional size. For better precise locations, the decoder consists of skip connections which basically concatenate the output of the upsampling layer with the feature maps from the encoder at the corresponding level. Finally, a 1x1 convolution is used to reduce the filter dimension and obtain the segmented image.
