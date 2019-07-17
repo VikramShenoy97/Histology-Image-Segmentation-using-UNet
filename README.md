@@ -13,7 +13,7 @@ As the problem requires generating binary masks of raw histology images, my firs
 
 ![Unet](https://github.com/VikramShenoy97/Histology-Image-Segmentation-using-UNet/blob/master/unet_architecture.png)
 
-*The UNet Architecture from the original paper by O Ronneberger et al., 2015.*
+*Fig 1. The UNet Architecture from the original paper by O Ronneberger et al., 2015.*
 
 
 The UNet architecture, consists of a contraction path (which is also called an Encoder) and an expanding path (which is also called a Decoder). This network is an end-to-end fully convolutional network, hence, the input to the network can be an image of any size.
@@ -25,7 +25,7 @@ The UNet works by downsampling the input image, working in the lower resolution,
 
 The dataset for training consists of 590 histology images and its corresponding ground truth label (binary mask).
 
-Training Image           |  Ground Truth Label
+Fig 2. Training Image           |  Fig 3. Ground Truth Label
 :-------------------------:|:-------------------------:
 ![](https://github.com/VikramShenoy97/Histology-Image-Segmentation-using-UNet/blob/master/data/raw/agxfpoobdlvfpkipcsun.jpg)  |  ![](https://github.com/VikramShenoy97/Histology-Image-Segmentation-using-UNet/blob/master/data/gt/agxfpoobdlvfpkipcsun.jpg)
 
@@ -34,7 +34,7 @@ The dataset for testing consists of 80 histology images similar to the ones prov
 
 ![Test_Image](https://github.com/VikramShenoy97/Histology-Image-Segmentation-using-UNet/blob/master/test_raw/zbfwxtfwwhhmqifdvjjl.jpg)
 
-*Test Image*
+*Fig 4. Test Image*
 
 
 ## Getting Started
@@ -66,7 +66,7 @@ is temporally efficient.
 For training the network, there are two approaches.
 
 
-1) Training the network on your local system
+**1) Training the network on your local system**
 
 
 • For training the network on your system, simply run the script train.py in your terminal as:
@@ -81,7 +81,7 @@ For training the network, there are two approaches.
 • The script saves the trained network as trained_model.h5 into the Saved_Model folder (Along with the history.csv file).
 
 
-2) Training the network on the cloud via Google Colab
+**2) Training the network on the cloud via Google Colab**
 
 
 • Store the data (gt and raw folders) in a folder called Unet_Data on your Google Drive.
@@ -102,14 +102,15 @@ The Graph is computed using the history.csv file and by running the graph.py scr
 ### Training Accuracy vs Training Loss
 ![Graph](https://github.com/VikramShenoy97/Histology-Image-Segmentation-using-UNet/blob/master/Training_Graph.png)
 
-
-*Training Accuracy vs Training Loss Graph*
+*Fig 5. Training Accuracy vs Training Loss Graph*
 
 
 The model is trained for 20 epochs.
 
 
 `The final accuracy = 85.315927 %`
+
+
 `The final loss = 0.122685015`
 
 ## Results
@@ -125,18 +126,18 @@ Run the script predict.py on your local terminal as:
 
 The script generates the segmented images and stores them into the test_gt folder.
 
-Test Image 1          |  Ground Truth Label 1
+Fig 6. Test Image          |  Fig 7. Ground Truth Label
 :-------------------------:|:-------------------------:
 ![](https://github.com/VikramShenoy97/Histology-Image-Segmentation-using-UNet/blob/master/test_raw/zbfwxtfwwhhmqifdvjjl.jpg)  |  ![](https://github.com/VikramShenoy97/Histology-Image-Segmentation-using-UNet/blob/master/test_gt/zbfwxtfwwhhmqifdvjjl.jpg)
 
 
-Test Image 2         |  Ground Truth Label 2
+Fig 8. Test Image         |  Fig 9. Ground Truth Label 2
 :-------------------------:|:-------------------------:
 ![](https://github.com/VikramShenoy97/Histology-Image-Segmentation-using-UNet/blob/master/test_raw/xkrthiidzdormknuowqh.jpg)  |  ![](https://github.com/VikramShenoy97/Histology-Image-Segmentation-using-UNet/blob/master/test_gt/xkrthiidzdormknuowqh.jpg)
 ## Built With
 
 * [Keras](https://keras.io) - Deep Learning Framework
-* [TensorFlow](https://www.tensorflow.org) - Deep Learning Framework
+* [Google Colab](https://colab.research.google.com/notebooks/welcome.ipynb) - Cloud Service
 
 ## Authors
 
