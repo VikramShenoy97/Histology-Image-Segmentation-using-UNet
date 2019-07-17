@@ -11,7 +11,7 @@ Develop a machine learning model for identifying cell nuclei from histology imag
 As the problem requires generating binary masks of raw histology images, my first thought was the use of a segmentation technique. There are multiple architectures for segmentation, however, UNet architecture works best for small datasets and is highly computationally efficient.
 
 
-![Unet](https://github.com/VikramShenoy97/Histology-Image-Segmentation-using-UNet/blob/master/unet_architecture.png "UNet Architecture")
+![Unet](https://github.com/VikramShenoy97/Histology-Image-Segmentation-using-UNet/blob/master/unet_architecture.png)*The UNet Architecture from the original paper by O Ronneberger et al., 2015.*
 
 
 The UNet architecture, consists of a contraction path (which is also called an Encoder) and an expanding path (which is also called a Decoder). This network is an end-to-end fully convolutional network, hence, the input to the network can be an image of any size.
@@ -23,13 +23,15 @@ The UNet works by downsampling the input image, working in the lower resolution,
 
 The dataset for training consists of 590 histology images and its corresponding ground truth label (binary mask).
 
-![Training_Image](https://github.com/VikramShenoy97/Histology-Image-Segmentation-using-UNet/blob/master/data/raw/agxfpoobdlvfpkipcsun.jpg) ![Ground_Truth_Label](https://github.com/VikramShenoy97/Histology-Image-Segmentation-using-UNet/blob/master/data/gt/agxfpoobdlvfpkipcsun.jpg)
-
 Training Image           |  Ground Truth Label
 :-------------------------:|:-------------------------:
 ![](https://github.com/VikramShenoy97/Histology-Image-Segmentation-using-UNet/blob/master/data/raw/agxfpoobdlvfpkipcsun.jpg)  |  ![](https://github.com/VikramShenoy97/Histology-Image-Segmentation-using-UNet/blob/master/data/gt/agxfpoobdlvfpkipcsun.jpg)
 
 The dataset for testing consists of 80 histology images similar to the ones provided as training images.
+
+
+![Test_Image](https://github.com/VikramShenoy97/Histology-Image-Segmentation-using-UNet/blob/master/test_raw/zbfwxtfwwhhmqifdvjjl.jpg)*Test Image*
+
 
 ## Getting Started
 
@@ -56,41 +58,34 @@ is temporally efficient.
 
 ** Plotly has only been used in the Graph.py file for visualising the training loss and training accuracy. It isn’t mandatory and does not contribute towards the training and prediction of the network.
 
-
-#### Content Image - A picture taken by me while on my trip to Amsterdam.
-
-![Content_Image](https://github.com/VikramShenoy97/Neural-Style-Transfer/blob/master/Input_Images/Amsterdam.jpg)
-
-#### Style Image - Starry Night by Vincent Van Gogh.
-
-![Style_Image](https://github.com/VikramShenoy97/Neural-Style-Transfer/blob/master/Input_Images/Starry_Night.jpg)
+### Training
+For training the network, there are two approaches.
 
 
-### Run
+1) Training the network on your local system
+• For training the network on your system, simply run the script train.py in your terminal as:
+`Python train.py`
+• The script imports the data using import_data.py file.
+• The script saves the trained network as trained_model.h5 into the Saved_Model folder (Along with the history.csv file).
 
-Run the script *test.py* in the terminal as follows.
 
-```
-Python test.py
-```
+2) Training the network on the cloud via Google Colab
+• Store the data (gt and raw folders) in a folder called Unet_Data on your Google Drive.
+• For training the network on GoogleColab, simply copy the google_colab.py script onto a Google Colab Python 2 Notebook.
+• Change the Runtime type to GPU accelerator.
+• The trained network will be downloaded as trained_model.h5 which needs to be stored into the Saved_Model folder (Along with the history.csv file).
 
-## Results
-The final output is stored in Output Images.
+## Training Performance
 
-### Intermediate Stages of Style Transfer
+The Graph is computed using the history.csv file and by running the graph.py script.
 
-Here is the generated image through different intervals of the run.
+### Training Accuracy vs Training Loss
+![Graph](https://github.com/VikramShenoy97/Histology-Image-Segmentation-using-UNet/blob/master/Training_Graph.png)*Training Accuracy vs Training Loss Graph*
 
-![Intermediate_Image](https://github.com/VikramShenoy97/Neural-Style-Transfer/blob/master/Output_Images/Intermediate_Images.jpg)
 
-### Transition through epochs
-
-![Transition](https://github.com/VikramShenoy97/Neural-Style-Transfer/blob/master/Transition/nst.gif)
-
-### Result of Style Transfer
-
-![Final_Image](https://github.com/VikramShenoy97/Neural-Style-Transfer/blob/master/Output_Images/Style_Transfer.jpg)
-
+The model is trained for 20 epochs.
+`The final accuracy = 85.315927 %`
+`The final loss = 0.122685015`
 
 ## Built With
 
@@ -103,5 +98,6 @@ Here is the generated image through different intervals of the run.
 
 ## Acknowledgments
 
-* Project is based on **Leon A. Gaty's** paper, [*A Neural Algorithm of Artistic Style*](https://arxiv.org/abs/1508.06576)
-* Project is inspired by **Raymond Yuan's** blog, [*Neural Style Transfer*](https://medium.com/tensorflow/neural-style-transfer-creating-art-with-deep-learning-using-tf-keras-and-eager-execution-7d541ac31398)
+* Understood the concept of UNet through **Olaf Ronneberger's** paper, [*U- net: Convolutional networks for biomedical image segmentation.*](https://arxiv.org/pdf/1505.04597.pdf)
+
+xkrthiidzdormknuowqh
